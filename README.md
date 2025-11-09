@@ -1,16 +1,17 @@
-# Adaptive Mixture of Local Experts
+# Adaptive Mixtures of Local Experts
 
-A clean, educational implementation of the foundational Mixture of Experts paper by Jacobs, Jordan, Nowlan, and Hinton (1991). Built to understand how MoE works from first principles before diving into modern transformers.
+A clean, educational implementation of the foundational *Mixture of Experts* architecture introduced by **Jacobs, Jordan, Nowlan, and Hinton (1991)** rebuilt from first principles in pure NumPy.
 
-> **Before Mixtral, before Switch Transformers scaled to trillions of parameters, there was this paper.**
+This project is designed for anyone who wants to **follow along with the original paper**, understand how expert specialization emerges, and see the learning dynamics unfold visually.  
+Each expert learns a simple linear decision boundary, while a gating network learns to route inputs to the most appropriate expert, exactly as described in the 1991 experiments.
 
-## What This Is
+You can use this repository to:
+- **Reproduce the original results** and decision boundary figures from the paper  
+- **Experiment interactively** with learning rates, number of experts, and training criteria  
+- **Visualize specialization** as experts take responsibility for different input regions  
+- **Learn the math in action** — every part of the implementation corresponds directly to equations in the paper  
 
-This repository implements the original adaptive mixture of experts architecture that learns to decompose tasks into specialized subtasks. Each "expert" network learns to handle different regions of the input space, coordinated by a gating network that routes inputs to the appropriate experts.
-
-The key insight: instead of training one large network to do everything, train multiple small expert networks that each specialize, with a gating network that learns which expert to trust for each input.
-
-**Paper**: [Adaptive Mixtures of Local Experts (1991)](https://www.cs.toronto.edu/~hinton/absps/jjnh91.pdf)
+**Paper:** [Adaptive Mixtures of Local Experts (1991)](https://www.cs.toronto.edu/~hinton/absps/jjnh91.pdf)
 
 ## Quick Start
 
@@ -19,7 +20,7 @@ The key insight: instead of training one large network to do everything, train m
 git clone https://github.com/yourusername/adaptive-mixtures-of-local-experts.git
 cd adaptive-mixtures-of-local-experts
 
-# Install dependencies (minimal!)
+# Install dependencies
 pip install numpy matplotlib
 
 # Train a mixture of experts on vowel discrimination
